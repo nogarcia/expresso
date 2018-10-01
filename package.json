@@ -1,0 +1,19 @@
+{
+  "name": "expresso",
+  "version": "0.0.1",
+  "description": "Coffee incremental game",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shrubhog/expresso.git"
+  },
+  "author": "Shrubhog",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shrubhog/expresso/issues"
+  },
+  "homepage": "https://github.com/Shrubhog/expresso#readme",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "jqueryui": "^1.11.1"
+  }
+}
