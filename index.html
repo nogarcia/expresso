@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Expresso</title>
     <link rel="stylesheet" href="node_modules/jqueryui/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
     <script src="node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
     <script src="node_modules/jqueryui/jquery-ui.js" charset="utf-8"></script>
@@ -26,12 +27,20 @@
         });
       } );
     </script>
+
   </head>
   <body>
-    <button class="aboutButton">About</button>
+    <div class="buttons">
+      <button class="aboutButton">About</button>
+    </div>
     <div id="dialog" title="About">
       <h1>Made by <a href="https://shrubhog.github.io">Shrubhog</a></h1>
       Made with <a href="https://github.com">Github</a>, <a href="https://jquery.com">JQuery</a>, and <a href="https://jqueryui.com">JQueryUI</a>
+    </div>
+    <div class="info">
+      Money: $<span id="money">0</span><br>
+      Income: $<span id="income">0</span>/second<br>
+      Cost $<span id="cost">0</span>/second<br>
     </div>
   </body>
 </html>

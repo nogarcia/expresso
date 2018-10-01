@@ -14,14 +14,11 @@
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
 	font-size:17px;
 	padding:16px 31px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
-  position: absolute;
-  top: 0;
-  right:0;
+	position: absolute;
 }
 .aboutButton:hover {
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #476e9e), color-stop(1, #7892c2));
@@ -36,4 +33,15 @@
 .aboutButton:active {
 	position:relative;
 	top:1px;
+}
+
+.buttons {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding-top: 10px;
+	padding-right: 30px;
+}
+html {
+	font-family: 'K2D';
 }
