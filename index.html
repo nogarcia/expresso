@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Expresso</title>
-    <link rel="stylesheet" href="node_modules/jqueryui/jquery-ui.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
     <script src="node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
-    <script src="node_modules/jqueryui/jquery-ui.js" charset="utf-8"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js" charset="utf-8"></script>
     <script type="text/javascript">
       $( function() {
         $( "#dialog" ).dialog({
@@ -26,6 +26,12 @@
           $( "#dialog" ).dialog( "open" );
         });
       } );
+      $(document).tooltip({
+        hide: {
+          effect: "explode",
+          delay: 250
+        }
+      });
     </script>
     <script src="main.js" charset="utf-8"></script>
   </head>
@@ -33,7 +39,7 @@
     <div class="buttons">
       <button class="aboutButton">About</button>
     </div>
-    <div id="dialog" title="About">
+    <div id="dialog">
       <h1>Made by <a href="https://shrubhog.github.io">Shrubhog</a></h1>
       Made with <a href="https://github.com">Github</a>, <a href="https://jquery.com">JQuery</a>, and <a href="https://jqueryui.com">JQueryUI</a>
     </div>
@@ -41,9 +47,9 @@
       Money: $<span id="money">0</span><br>
     </div>
     <div class="upgrades">
-      <button style="height: 50px;" type="button" name="button" class="Button" id="couch" onclick="getPaid(1);">Look between the couch cushions</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="favor" onclick="getPaid(10);" >Do a favor</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="buyCoffeeMachine" onclick="buyCoffeeMachines();" >Buy Coffee Machine</button>
+      <button style="height: 50px;" type="button" name="button" class="Button" id="couch" onclick="getPaid(1);" title="Gives $1. There's only so much cash in the couch.">Look between the couch cushions</button><br><br><br><br>
+      <button style="height: 50px;" type="button" name="button" class="Button" id="favor" onclick="getPaid(10);" title="Gives $10. A bunch of people need stuff done; why not do it?" >Do a favor</button><br><br><br><br>
+      <button style="height: 50px;" type="button" name="button" class="Button" id="buyCoffeeMachine" onclick="buyCoffeeMachines();" title="Costs $100, gives $1/sec. It's pretty good.">Buy Coffee Machine</button>
     </div>
   </body>
 </html>
