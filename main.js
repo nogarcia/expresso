@@ -6,15 +6,19 @@ function getPaid(num) {
 }
 var coffeeMachines = 0;
 function buyCoffeeMachines(){
-    var cursorCost = Math.floor(10 * Math.pow(1.1,coffeeMachines));
-    if(money >= cursorCost){
+
+    var coffeeMachineCost = Math.floor(100 * Math.pow(1.1,coffeeMachines));
+    if(money >= coffeeMachineCost){
+        if (typeof $("#coffeeMachines").html() == "undefined") {
+          $(".info").append("Coffee Machines: <span id='coffeeMachines'></span><br>")
+          $("#coffeeMachines").html(coffeeMachines)
+        }
         coffeeMachines = coffeeMachines + 1;
-    	money = money - cursorCost;
-        $('#coffeeMachines').innerHTML = coffeeMachines;
-        $('#money').innerHTML = money;
+    	   money = money - coffeeMachineCost;
+        $('#coffeeMachines').html(coffeeMachines);
+        $('#money').html(money);
     };
     var nextCost = Math.floor(10 * Math.pow(1.1,coffeeMachines));
-    document.getElementById('cursorCost').innerHTML = nextCost;
 };
 
 
