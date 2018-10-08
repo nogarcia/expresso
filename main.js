@@ -23,5 +23,4 @@ function buyCoffeeMachines(){
 
 
 window.setInterval(function() {
-  getPaid(coffeeMachines)
 }, 1000)
