@@ -22,22 +22,23 @@ function buyCoffeeMachines(){
 };
 
 var autoCoffees = 0;
-function buyAutoCoffee(){
-
+function buyAutoCoffee() {
     var autoCoffeeCost = Math.floor(50 * Math.pow(1.1,autoCoffees));
-    if(money >= autoCoffeeCost && coffeeMachines > 1){
+    console.log(autoCoffeeCost)
+    if(money >= autoCoffeeCost && coffeeMachines > 0){
+        console.log("Can buy it!")
         if (typeof $("#autoCoffees").html() == "undefined") {
           $(".info").append("Auto Coffee Machines: <span id='autoCoffees'></span><br>")
           $("#autoCoffees").html(autoCoffees)
         }
         autoCoffees += 1;
-    	  money = money - autoCoffeeCost;
+    	money = money - autoCoffeeCost;
         coffeeMachines = coffeeMachines - 1;
         $('#autoCoffees').html(autoCoffees);
-        $('coffeeMachines').html(coffeeMachines);
+        $('#coffeeMachines').html(coffeeMachines);
         $('#money').html(money);
     };
-    var nextCost = Math.floor(50 * Math.pow(1.1,coffeeMachines));
+    var nextCost = Math.floor(50 * Math.pow(1.1,autoCoffees));
 };
 
 window.setInterval(function() {
