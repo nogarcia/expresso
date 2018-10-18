@@ -1,4 +1,7 @@
 # expresso
+
+[![GitHub issues](https://img.shields.io/github/issues/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/issues)
+
 Incremental game built entirely around coffee. Right now, it's just a work in progress. All it does is give you money right now. (Not real money. I meant it has a currency system.) I'd really like some help on other features, so pull requests are very much appreciated.
 
 ## What I'm planning
