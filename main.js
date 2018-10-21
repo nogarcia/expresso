@@ -5,9 +5,38 @@ var tooltips = {
   autoCoffee: "Costs $- and a coffee machine, gives an auto coffee machine and $1/s. Making coffee is pretty slow. Let's make the robots do it!"
 }
 
+var couchSearched = 0;
+var favorsDone = 0;
+
 function getPaid(num) {
   money += num;
   $("#money").html(money);
+}
+function couch() {
+  if (couchSearched < 9) {
+    getPaid(1);
+    couchSearched += 1;
+  } else if (couchSearched == 9) {
+    getPaid(1);
+    couchSearched += 1;
+    $("#couch").addClass("disabledButton");
+    $( "#couch" ).tooltip( "option", "disabled", true );
+  } else if (couchSearched >= 10) {
+    $("#couch").addClass("disabledButton");
+  }
+}
+function favor() {
+  if (favorsDone < 8) {
+    getPaid(10);
+    favorsDone += 1;
+  } else if (favorsDone == 8) {
+    getPaid(10);
+    favorsDone += 1;
+    $("#favor").addClass("disabledButton");
+    $( "#favor" ).tooltip( "option", "disabled", true );
+  } else if (couchSearched >= 9) {
+    $("#couch").addClass("disabledButton");
+  }
 }
 var coffeeMachines = 0;
 function buyCoffeeMachines(){

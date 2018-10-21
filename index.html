@@ -42,46 +42,11 @@
       Money: $<span id="money">0</span><br>
     </div>
     <div class="upgrades">
-      <div id="couch"><button style="height: 50px;" type="button" name="button" class="Button" id="couch" onclick="getPaid(1);" title="Gives $1. There's only so much cash in the couch.">Look between the couch cushions</button><br><br><br><br></div>
-      <div id="favor"><button style="height: 50px;" type="button" name="button" class="Button" id="favor" onclick="getPaid(10);" title="Gives $10. A bunch of people need stuff done; why not do it?" >Do a favor</button><br><br><br><br></div>
-      <div id="buyCoffeeMachine"><button style="height: 50px;" type="button" name="button" class="Button" id="buyCoffeeMachine" onclick="buyCoffeeMachines();" title="Costs $100, allows you to make coffee. It's pretty good coffee.">Buy Coffee Machine</button><br><br><br><br></div>
-      <div id="makeCoffee"><button style="height: 50px;" type="button" name="button" class="Button" id="makeCoffee" onclick="getPaid(10*coffeeMachines);" title="Gives $10 for each machine. Your neighbors will pay for the coffee if you let them use your machine. Win-Win.">Make Coffee</button><br><br><br><br></div>
-      <div id="buyAutoCoffee"><button style="height: 50px;" type="button" name="button" class="Button" id="buyAutoCoffee" onclick="buyAutoCoffee();" title="Costs $50 and a coffee machine, gives an auto coffee machine and $1/s. Making coffee is pretty slow. Let's make the robots do it!">Automate coffee machine</button><br><br><br><br></div>
-
+      <button style="height: 50px;" type="button" name="button" class="Button" id="couch" onclick="couch();" title="Gives $1. There's only so much cash in the couch.">Look between the couch cushions</button><br><br><br><br>
+      <button style="height: 50px;" type="button" name="button" class="Button" id="favor" onclick="favor();" title="Gives $10. A bunch of people need stuff done; why not do it?" >Do a favor</button><br><br><br><br>
+      <button style="height: 50px;" type="button" name="button" class="Button" id="buyCoffeeMachine" onclick="buyCoffeeMachines();" title="Costs $100, allows you to make coffee. It's pretty good coffee.">Buy Coffee Machine</button><br><br><br><br>
+      <button style="height: 50px;" type="button" name="button" class="Button" id="makeCoffee" onclick="getPaid(5*coffeeMachines);" title="Gives $5 for each machine. Your neighbors will pay for the coffee if you let them use your machine. Win-Win.">Make Coffee</button><br><br><br><br>
+      <button style="height: 50px;" type="button" name="button" class="Button" id="buyAutoCoffee" onclick="buyAutoCoffee();" title="Costs $50 and a coffee machine, gives an auto coffee machine and $1/s. Making coffee is pretty slow. Let's make the robots do it!">Automate coffee machine</button><br><br><br><br>
     </div>
-    <script type="text/javascript">
-      $(".Button").hide(0,function () {
-        console.log("All buttons hidden");
-      })
-      $("button#couch").show()
-      $("div#couch").show()
-      var unlocked = [true, false, false]
-      window.setInterval(function () {
-        if (unlocked[0] == true && typeof $("#couch").html !== "undefined") {
-          $("button#couch").show()
-          $("div#couch").show()
-        } else if (unlocked[0] == false && typeof $("#couch").html !== "undefined") {
-          $("button#couch").remove()
-          $("div#couch").remove()
-        } else if (unlocked[1] == true && typeof $("#favor").html !== "undefined") {
-          $("button#favor").show()
-          $("div#favor").show()
-        } else if (unlocked[1] == false && typeof $("#favor").html !== "undefined") {
-          $("button#favor").remove()
-          $("div#favor").remove()
-        } else if (unlocked[2] == true) {
-          $("#buyCoffeeMachine").show()
-          $("#makeCoffee").show()
-          $("#buyAutoCoffee").show()
-        }
-        if (unlocked[0] == true && money >= 10) {
-          unlocked[0] = false;
-          unlocked[1] = true;
-        } else if (unlocked[1] == true && money >= 100) {
-          unlocked[1] = false;
-          unlocked[2] = true;
-        }
-      }, 10)
-    </script>
   </body>
 </html>
