@@ -3,7 +3,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/issues) 
 [![GitHub forks](https://img.shields.io/github/forks/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/network)
 [![GitHub stars](https://img.shields.io/github/stars/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/stargazers)
-[![GitHub license](https://img.shields.io/github/license/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 
 Incremental game built entirely around coffee. Right now, it's just a work in progress. All it does is give you money right now. (Not real money. I meant it has a currency system.) I'd really like some help on other features, so pull requests are very much appreciated.
