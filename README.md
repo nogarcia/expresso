@@ -15,3 +15,6 @@ Technology tree goes like this:
 * Get a coffee machine for 100 dollars, gives a coffee machine
 * Make coffee for neighbors, gives 5 dollars
 * Automate coffee machine for 50 dollars, gives one auto coffee machine (gives $1/second), costs one coffee machine
+## Plans
+I'm planning to switch from plain HTML, JS, and CSS to Angular and Typescript.
+The main reason is because I've seen a lot of incremental games using Angular routes, which I think are pretty amazing.
