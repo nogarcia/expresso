@@ -81,6 +81,13 @@ function buyAutoCoffee() {
     $("button#buyAutoCoffee").attr("title", priceTooltip2)
 };
 
+var haveBasement = false;
+function buyBasement() {
+  if (!haveBasement && money > 200) {
+    haveBasement = true;
+  }
+}
+
 window.setInterval(function() {
-  getPaid(autoCoffees);
+  getPaid(autoCoffees * 5);
 }, 1000)
