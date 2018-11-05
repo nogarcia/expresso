@@ -89,5 +89,5 @@ function buyBasement() {
 }
 
 window.setInterval(function() {
-  getPaid(autoCoffees * 5);
-}, 1000)
+  getPaid(autoCoffees * 1.375);
+}, 250)
