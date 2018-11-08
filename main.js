@@ -91,3 +91,4 @@ function buyBasement() {
 window.setInterval(function() {
   getPaid(autoCoffees * 1.375);
 }, 250)
+// test
