@@ -97,7 +97,7 @@ function hireIntern() {
   if (haveBasement && money >= 50) {
     var internCost = Math.floor(50 * Math.pow(1.1,interns));
     console.log(internCost)
-    if(money >= internCost && interns > 0){
+    if(money >= internCost){
         console.log("Can buy it!")
         if (typeof $("#interns").html() == "undefined") {
           $(".info").append("Interns: <span id='interns'></span><br>")
