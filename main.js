@@ -1,12 +1,22 @@
+// expresso: main.js
+// Commit 45(?), alpha version
+// by Shrubhog
+
+// Money, the stablest and most unchanging currency in the world. 
 var money = 0;
 
+// Crude updating tooltip, because ${} requires you to reload the variable after every price. Again, and again, and again. 
 var tooltips = {
   coffee: "Costs $-, allows you to make coffee. It's pretty good coffee.",
-  autoCoffee: "Costs $- and a coffee machine, gives an auto coffee machine and $1/s. Making coffee is pretty slow. Let's make the robots do it!"
+  autoCoffee: "Costs $- and a coffee machine, gives an auto coffee machine and $1/s. Making coffee is pretty slow. Let's make the robots do it!",
+  intern: "Costs $-. Gets you an intern to help around and make coffee. $10/s"
 }
 
+// another crude solution to remember how many times the buttons are pressed.
 var couchSearched = 0;
 var favorsDone = 0;
+
+// functions
 
 function getPaid(num) {
   money += num;
@@ -51,11 +61,12 @@ function buyCoffeeMachines(){
     	  money = money - coffeeMachineCost;
         $('#coffeeMachines').html(coffeeMachines);
         $('#money').html(money);
+        var nextCost = Math.floor(100 * Math.pow(1.1,coffeeMachines));
+        var priceTooltip1 = tooltips.coffee.split("-");
+        var priceTooltip2 = priceTooltip1[0] + nextCost + priceTooltip1[1];
+        $("button#buyCoffeeMachine").attr("title", priceTooltip2)
     };
-    var nextCost = Math.floor(100 * Math.pow(1.1,coffeeMachines));
-    var priceTooltip1 = tooltips.coffee.split("-");
-    var priceTooltip2 = priceTooltip1[0] + nextCost + priceTooltip1[1];
-    $("button#buyCoffeeMachine").attr("title", priceTooltip2)
+    
 };
 
 var autoCoffees = 0;
@@ -74,11 +85,35 @@ function buyAutoCoffee() {
         $('#autoCoffees').html(autoCoffees);
         $('#coffeeMachines').html(coffeeMachines);
         $('#money').html(money);
+        var nextCost = Math.floor(50 * Math.pow(1.1,autoCoffees));
+        var priceTooltip1 = tooltips.autoCoffee.split("-");
+        var priceTooltip2 = priceTooltip1[0] + nextCost + priceTooltip1[1];
+        $("button#buyAutoCoffee").attr("title", priceTooltip2)
     };
-    var nextCost = Math.floor(50 * Math.pow(1.1,autoCoffees));
-    var priceTooltip1 = tooltips.autoCoffee.split("-");
-    var priceTooltip2 = priceTooltip1[0] + nextCost + priceTooltip1[1];
-    $("button#buyAutoCoffee").attr("title", priceTooltip2)
+    
+};
+var interns = 0;
+function hireIntern() {
+  if (haveBasement && money >= 50) {
+    var internCost = Math.floor(50 * Math.pow(1.1,interns));
+    console.log(internCost)
+    if(money >= internCost && interns > 0){
+        console.log("Can buy it!")
+        if (typeof $("#interns").html() == "undefined") {
+          $(".info").append("Interns: <span id='interns'></span><br>")
+          $("#interns").html(interns)
+        }
+        interns += 1;
+    	  money = money - internCost;
+        interns = interns - 1;
+        $('#interns').html(interns);
+        $('#money').html(money);
+        var nextCost = Math.floor(50 * Math.pow(1.1,interns));
+        var priceTooltip1 = tooltips.intern.split("-");
+        var priceTooltip2 = priceTooltip1[0] + nextCost + priceTooltip1[1];
+        $("button#hireIntern").attr("title", priceTooltip2)
+    };
+  }
 };
 
 var haveBasement = false;
@@ -87,6 +122,8 @@ function buyBasement() {
     haveBasement = true;
   }
 }
+
+// game clock, set to every quarter of a second because every second is too slow for me.
 
 window.setInterval(function() {
   getPaid(autoCoffees * 1.375);
