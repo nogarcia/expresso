@@ -105,7 +105,6 @@ function hireIntern() {
         }
         interns += 1;
     	  money = money - internCost;
-        interns = interns - 1;
         $('#interns').html(interns);
         $('#money').html(money);
         var nextCost = Math.floor(50 * Math.pow(1.1,interns));
@@ -119,6 +118,7 @@ function hireIntern() {
 var haveBasement = false;
 function buyBasement() {
   if (!haveBasement && money > 200) {
+    money = money - 200;
     haveBasement = true;
   }
 }
@@ -127,5 +127,6 @@ function buyBasement() {
 
 window.setInterval(function() {
   getPaid(autoCoffees * 1.375);
+  getPaid(interns * 2.5);
 }, 250)
 // test
