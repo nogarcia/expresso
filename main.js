@@ -1,5 +1,5 @@
 // expresso: main.js
-// Commit 45(?), alpha version
+// Commit 49(?), alpha version
 // by Shrubhog
 
 // Money, the stablest and most unchanging currency in the world. 
@@ -9,7 +9,8 @@ var money = 0;
 var tooltips = {
   coffee: "Costs $-, allows you to make coffee. It's pretty good coffee.",
   autoCoffee: "Costs $- and a coffee machine, gives an auto coffee machine and $1/s. Making coffee is pretty slow. Let's make the robots do it!",
-  intern: "Costs $-. Gets you an intern to help around and make coffee. $10/s"
+  intern: "Costs $-. Gets you an intern to help around and make coffee. $10/s",
+  croissants: "Costs $-. Hire a person to make those little french bagel things. $20/10s"
 }
 
 // another crude solution to remember how many times the buttons are pressed.
@@ -94,7 +95,7 @@ function buyAutoCoffee() {
 };
 var interns = 0;
 function hireIntern() {
-  if (haveBasement && money >= 50) {
+  if (haveBasement) {
     var internCost = Math.floor(50 * Math.pow(1.1,interns));
     console.log(internCost)
     if(money >= internCost){
@@ -115,6 +116,30 @@ function hireIntern() {
   }
 };
 
+var croissants = 0;
+
+function hireCroissantMaker() {
+  if (haveBasement) {
+    var croissantCost = Math.floor(75 * Math.pow(1.1,croissants));
+    console.log(croissantCost)
+    if(money >= croissantCost){
+        console.log("Can buy it!")
+        if (typeof $("#croissant").html() == "undefined") {
+          $(".info").append("Croissant Makers: <span id='croissant'></span><br>")
+          $("#croissant").html(interns)
+        }
+        croissants += 1;
+    	  money = money - croissantCost;
+        $('#croissant').html(croissants);
+        $('#money').html(money);
+        var nextCost = Math.floor(75 * Math.pow(1.1,croissants));
+        var priceTooltip1 = tooltips.croissants.split("-");
+        var priceTooltip2 = priceTooltip1[0] + nextCost + priceTooltip1[1];
+        $("button#hireCroissantMaker").attr("title", priceTooltip2)
+    };
+  }
+};
+
 var haveBasement = false;
 function buyBasement() {
   if (!haveBasement && money > 200) {
@@ -129,4 +154,7 @@ window.setInterval(function() {
   getPaid(autoCoffees * 1.375);
   getPaid(interns * 2.5);
 }, 250)
-// test
+// second game clock that is set to 2.5 seconds because that is four times faster than ten seconds.
+window.setInterval(function() {
+  getPaid(croissants * 20);
+}, 2500)
