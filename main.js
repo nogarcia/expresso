@@ -10,7 +10,8 @@ var tooltips = {
   coffee: "Costs $-, allows you to make coffee. It's pretty good coffee.",
   autoCoffee: "Costs $- and a coffee machine, gives an auto coffee machine and $1/s. Making coffee is pretty slow. Let's make the robots do it!",
   intern: "Costs $-. Gets you an intern to help around and make coffee. $10/s",
-  croissants: "Costs $-. Hire a person to make those little french bagel things. $20/10s"
+  croissants: "Costs $-. Hire a person to make those little french bagel things. $20/10s",
+  cookies: "Costs $-. Hire a nice baker to make the odd batch of cookies, and believe me, they are AMAZING cookies. $35/10s"
 }
 
 // another crude solution to remember how many times the buttons are pressed.
@@ -140,6 +141,29 @@ function hireCroissantMaker() {
   }
 };
 
+var cookies = 0;
+function hireCookieMaker() {
+  if (haveBasement) {
+    var cookieCost = Math.floor(95 * Math.pow(1.1,cookies));
+    console.log(cookieCost)
+    if(money >= cookieCost){
+        console.log("Can buy it!")
+        if (typeof $("#cookie").html() == "undefined") {
+          $(".info").append("Cookie Makers: <span id='cookie'></span><br>")
+          $("#cookie").html(cookies)
+        }
+        cookies += 1;
+    	  money = money - cookieCost;
+        $('#cookie').html(cookies);
+        $('#money').html(money);
+        var nextCost = Math.floor(95 * Math.pow(1.1,cookies));
+        var priceTooltip1 = tooltips.cookies.split("-");
+        var priceTooltip2 = priceTooltip1[0] + nextCost + priceTooltip1[1];
+        $("button#hireCookieMaker").attr("title", priceTooltip2)
+    };
+  }
+};
+
 var haveBasement = false;
 function buyBasement() {
   if (!haveBasement && money > 200) {
@@ -157,4 +181,5 @@ window.setInterval(function() {
 // second game clock that is set to 2.5 seconds because that is four times faster than ten seconds.
 window.setInterval(function() {
   getPaid(croissants * 5);
+  getPaid(cookies * 8.75)
 }, 2500)
