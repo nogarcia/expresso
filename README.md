@@ -24,3 +24,6 @@ I'm planning to switch from plain HTML, JS, and CSS to Angular and Typescript.
 The main reason is because I've seen a lot of incremental games using Angular routes, which I think are pretty amazing.
 But right now, I'm gonna stay in HTML, JS, and CSS cuz I want to add some more features:
 * Maybe an upgrade tab, if I can figure out how to do it without exploding. It might have different flavors of croissants and cookies (yes, like in cookie-clicker)
+
+## Changelog
+* November 13, 2018, 2:45 PM: v. 0.1, first **release**. After 52 commits, the first release of expresso is here, more for organization than for milestones. Now, there's a changelog and a version list. After this, I'll start committing in **bulk updates**.

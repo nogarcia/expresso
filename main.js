@@ -1,5 +1,5 @@
 // expresso: main.js
-// Commit 49(?), alpha version
+// v. 0.1
 // by Shrubhog
 
 // Money, the stablest and most unchanging currency in the world. 
