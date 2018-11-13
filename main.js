@@ -156,5 +156,5 @@ window.setInterval(function() {
 }, 250)
 // second game clock that is set to 2.5 seconds because that is four times faster than ten seconds.
 window.setInterval(function() {
-  getPaid(croissants * 20);
+  getPaid(croissants * 5);
 }, 2500)
