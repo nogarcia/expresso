@@ -1,5 +1,7 @@
 # expresso
 
+<img alt="Coffee Cup Icon by Freepik on Flaticon" src="coffee-cup.svg" style="float: center;" width=200 height=200 />
+
 [![GitHub issues](https://img.shields.io/github/issues/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/issues) 
 [![GitHub forks](https://img.shields.io/github/forks/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/network)
 [![GitHub stars](https://img.shields.io/github/stars/Shrubhog/expresso.svg)](https://github.com/Shrubhog/expresso/stargazers)
@@ -30,3 +32,5 @@ But right now, I'm gonna stay in HTML, JS, and CSS because I want to add some mo
 
 ## Changelog
 There is a changelog [here](CHANGELOG.md). It is a compiled list of updates since `v.0.1`.
+
+> &copy; Coffee Cup Icon by [Freepik](freepik.com) on [Flaticon](flaticon.com)
