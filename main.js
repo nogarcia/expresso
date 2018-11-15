@@ -183,3 +183,8 @@ window.setInterval(function() {
   getPaid(croissants * 5);
   getPaid(cookies * 8.75)
 }, 2500)
+// game MpS
+window.setInterval(function() {
+  var MpS = (autoCoffees * 5.5)+(interns * 2.5)+(croissants * 2)+(cookies * 3.5);
+  $("#MpS").html(MpS);
+}, 250)
