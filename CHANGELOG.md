@@ -6,6 +6,7 @@ Based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0), and *kind of* 
 ## [Unreleased]
 ### Added
 - Dollars per Second in the info
+- Added Favicon
 ### Planned
 - Percentage DpS in tooltips
 
