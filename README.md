@@ -29,6 +29,8 @@ But right now, I'm gonna stay in HTML, JS, and CSS because I want to add some mo
 * Upgrades: coffee flavours, croissant flavours
 * Dollars per Second in the info
 * Percentage DpS in tooltips
+* Donut Makers
+* Shops increase overall income by 5%
 
 ## Changelog
 There is a changelog [here](CHANGELOG.md). It is a compiled list of updates since `v.0.1`.
