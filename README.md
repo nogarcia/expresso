@@ -27,8 +27,7 @@ The main reason is because I've seen a lot of incremental games using Angular ro
 But right now, I'm gonna stay in HTML, JS, and CSS because I want to add some more features:
 * Maybe an upgrade tab, if I can figure out how to do it without exploding. It might have different flavors of croissants and cookies (yes, like in cookie-clicker)
 * Upgrades: coffee flavours, croissant flavours
-* Dollars per Second in the info
-* Percentage DpS in tooltips
+* Percentage DpS in tooltips (CANCELED)
 * Donut Makers
 * Shops increase overall income by 5%
 
