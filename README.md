@@ -25,9 +25,7 @@ Technology tree goes like this:
 I'm planning to switch from plain HTML, JS, and CSS to Angular and Typescript.
 The main reason is because I've seen a lot of incremental games using Angular routes, which I think are pretty amazing.
 But right now, I'm gonna stay in HTML, JS, and CSS because I want to add some more features:
-* Maybe an upgrade tab, if I can figure out how to do it without exploding. It might have different flavors of croissants and cookies (yes, like in cookie-clicker)
 * Upgrades: coffee flavours, croissant flavours
-* Percentage DpS in tooltips (CANCELED)
 * Donut Makers
 * Shops increase overall income by 5%
 
