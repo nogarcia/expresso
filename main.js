@@ -97,6 +97,8 @@ function buyAutoCoffee() {
 var interns = 0;
 function hireIntern() {
   if (haveBasement) {
+    $("#hireIntern").removeClass("disabledButton");
+    $("#hireIntern").addClass("Button");
     var internCost = Math.floor(50 * Math.pow(1.1,interns));
     console.log(internCost)
     if(money >= internCost){
@@ -121,6 +123,8 @@ var croissants = 0;
 
 function hireCroissantMaker() {
   if (haveBasement) {
+    $("#hireCroissantMaker").removeClass("disabledButton");
+    $("#hireCroissantMaker").addClass("Button");
     var croissantCost = Math.floor(75 * Math.pow(1.1,croissants));
     console.log(croissantCost)
     if(money >= croissantCost){
@@ -144,6 +148,8 @@ function hireCroissantMaker() {
 var cookies = 0;
 function hireCookieMaker() {
   if (haveBasement) {
+    $("#hireCookieMaker").removeClass("disabledButton");
+    $("#hireCookieMaker").addClass("Button");
     var cookieCost = Math.floor(95 * Math.pow(1.1,cookies));
     console.log(cookieCost)
     if(money >= cookieCost){
@@ -188,3 +194,13 @@ window.setInterval(function() {
   var MpS = (autoCoffees * 5.5)+(interns * 2.5)+(croissants * 2)+(cookies * 3.5);
   $("#MpS").html(MpS);
 }, 250)
+
+$(document).on("keypress", function (e) {
+  if (String.fromCharCode(e.which) == "i") {
+    $("#tab-info").tab("show");
+  } else if (String.fromCharCode(e.which) == "s") {
+    $("#tab-shop").tab("show");
+  } else if (String.fromCharCode(e.which) == "u") {
+    $("#tab-upgrades").tab("show");
+  }
+});

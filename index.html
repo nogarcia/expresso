@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Expresso</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -13,7 +17,6 @@
     <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
     <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
     <link rel="stylesheet" href="css/master.css">
-    <script src="node_modules/jquery/dist/jquery.js" charset="utf-8"></script>
     <script src="jquery-ui-1.12.1/jquery-ui.js" charset="utf-8"></script>
     <script type="text/javascript">
       $( function() {
@@ -45,20 +48,46 @@
       <h1>Made by <a href="https://shrubhog.github.io">Shrubhog</a></h1>
       Made with <a href="https://github.com">Github</a>, <a href="https://jquery.com">JQuery</a>, and <a href="https://jqueryui.com">JQueryUI</a>
     </div>
-    <div class="info">
-      Money: $<span id="money">0</span><br>
-      Money per Second: $<span id="MpS">0</span><br>
-    </div>
-    <div class="upgrades">
-      <button style="height: 50px;" type="button" name="button" class="Button" id="couch" onclick="couch();" title="Gives $1. There's only so much cash in the couch.">Look between the couch cushions</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="favor" onclick="favor();" title="Gives $10. A bunch of people need stuff done; why not do it?" >Do a favor</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="buyCoffeeMachine" onclick="buyCoffeeMachines();" title="Costs $100, allows you to make coffee. It's pretty good coffee.">Buy Coffee Machine</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="makeCoffee" onclick="getPaid(2*coffeeMachines);" title="Gives $5 for each machine. Your neighbors will pay for the coffee if you let them use your machine. Win-Win.">Make Coffee</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="buyAutoCoffee" onclick="buyAutoCoffee();" title="Costs $50 and a coffee machine, gives an auto coffee machine and $5.5/s. Making coffee is pretty slow. Let's make the robots do it!">Automate coffee machine</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="buyBasement" onclick="buyBasement();" title="Costs $200 (if you think she'll let you in for free, you've got another thing coming). Allows you to set up shop in Grandma's basement.">Move business to Grandma's basement</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="hireIntern" onclick="hireIntern();" title="Costs $50. Gets you an intern to help around and make coffee. $10/s">Hire Intern</button><br><br><br><br>
-      <button style="height: 50px;" type="button" name="button" class="Button" id="hireCroissantMaker" onclick="hireCroissantMaker();" title="Costs $75. Hire a person to make those little french bagel things. $20/10s">Hire Croissant Maker</button><br><br><br><br>    
-      <button style="height: 50px;" type="button" name="button" class="Button" id="hireCookieMaker" onclick="hireCookieMaker();" title="Costs $95. Hire a nice baker to make the odd batch of cookies, and believe me, they are AMAZING cookies. $35/10s">Hire Cookie Maker</button><br><br><br><br>    
+    <ul class="nav nav-tabs">
+      <li>
+        <a href="#tab-info" data-toggle="tab">Info</a>
+      </li>
+      <li>
+        <a href="#tab-shop" data-toggle="tab">Shop</a>
+      </li>
+      <li>
+        <a href="#tab-upgrade" data-toggle="tab">Upgrades</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab-info">
+        <div class="info">
+          Money: $<span id="money">0</span><br>
+          Money per Second: $<span id="MpS">0</span><br>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-shop">
+        <div class="upgrades">
+          <button style="height: 50px;" type="button" name="button" class="Button" id="couch" onclick="couch();" title="Gives $1. There's only so much cash in the couch.">Look between the couch cushions</button><br><br><br><br>
+          <button style="height: 50px;" type="button" name="button" class="Button" id="favor" onclick="favor();" title="Gives $10. A bunch of people need stuff done; why not do it?" >Do a favor</button><br><br><br><br>
+          <button style="height: 50px;" type="button" name="button" class="Button" id="buyCoffeeMachine" onclick="buyCoffeeMachines();" title="Costs $100, allows you to make coffee. It's pretty good coffee.">Buy Coffee Machine</button><br><br><br><br>
+          <button style="height: 50px;" type="button" name="button" class="Button" id="makeCoffee" onclick="getPaid(2*coffeeMachines);" title="Gives $5 for each machine. Your neighbors will pay for the coffee if you let them use your machine. Win-Win.">Make Coffee</button><br><br><br><br>
+          <button style="height: 50px;" type="button" name="button" class="disabledButton" id="hireIntern" onclick="hireIntern();" title="Costs $50. Gets you an intern to help around and make coffee. $10/s">Hire Intern</button><br><br><br><br>
+          <button 
+            style="height: 50px;" 
+            type="button" 
+            name="button" 
+            class="disabledButton" 
+            id="hireCroissantMaker" 
+            onclick="hireCroissantMaker();" 
+            title="Costs $75. Hire a person to make those little french bagel things. $20/10s">Hire Croissant Maker</button><br><br><br><br>    
+          <button style="height: 50px;" type="button" name="button" class="disabledButton" id="hireCookieMaker" onclick="hireCookieMaker();" title="Costs $95. Hire a nice baker to make the odd batch of cookies, and believe me, they are AMAZING cookies. $35/10s">Hire Cookie Maker</button><br><br><br><br>    
+        </div>
+      </div>
+      <div class="tab-pane" id="tab-upgrade">
+        <button style="height: 50px;" type="button" name="button" class="Button" id="buyAutoCoffee" onclick="buyAutoCoffee();" title="Costs $50 and a coffee machine, gives an auto coffee machine and $5.5/s. Making coffee is pretty slow. Let's make the robots do it!">Automate coffee machine</button><br><br><br><br>
+        <button style="height: 50px;" type="button" name="button" class="Button" id="buyBasement" onclick="buyBasement();" title="Costs $200 (if you think she'll let you in for free, you've got another thing coming). Allows you to set up shop in Grandma's basement.">Move business to Grandma's basement</button><br><br><br><br>
+      </div>
     </div>
   </body>
 </html>
