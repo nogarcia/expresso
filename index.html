@@ -19,23 +19,6 @@
     <link rel="stylesheet" href="css/master.css">
     <script src="jquery-ui-1.12.1/jquery-ui.js" charset="utf-8"></script>
     <script type="text/javascript">
-      $( function() {
-        $( "#dialog" ).dialog({
-          autoOpen: false,
-          show: {
-            effect: "blind",
-            duration: 1000
-          },
-          hide: {
-            effect: "explode",
-            duration: 1000
-          }
-        });
-
-        $( ".aboutButton" ).on( "click", function() {
-          $( "#dialog" ).dialog( "open" );
-        });
-      } );
       $(document).tooltip();
     </script>
     <script src="main.js" charset="utf-8"></script>
@@ -43,10 +26,6 @@
   <body>
     <div class="buttons">
       <button class="aboutButton">About</button>
-    </div>
-    <div id="dialog">
-      <h1>Made by <a href="https://shrubhog.github.io">Shrubhog</a></h1>
-      Made with <a href="https://github.com">Github</a>, <a href="https://jquery.com">JQuery</a>, and <a href="https://jqueryui.com">JQueryUI</a>
     </div>
     <ul class="nav nav-tabs">
       <li>
